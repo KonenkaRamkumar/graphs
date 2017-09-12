@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bar Chart</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+	</head>
+
+<style>
+	body{ padding:0; margin:0; background:#e3e3d9;}
+	.breadcrumb { margin-top:52px; background:#fff; padding:15px 0;}
+	path.domain { display:none;}
+	.chart-box { background:#fff; overflow:hidden; height:auto; padding:15px 0;}
+	.chart-box h4 { float:left; width:100%; font-size:18px; font-weight:bold; padding:0 15px; margin-bottom:10px; color:#333;}
+	.chart-box h4 span { float:right; font-size:21px;}
+	.c3 { right:30px; clear:both;}
+	.ttl-sls-bg { padding:10px 15px; height:70px; background:#eee; color:#333; display:block; clear:both;}
+	#chart3, #chart4, #chart5, #chart6, #chart7, #chart8, #chart9, #chart10, #chart11, #chart12, #chart13, #chart14, #chart15, #chart16, #chart17, #chart18, #chart19, #chart20, #chart21, #chart22, #chart23, #chart24, #chart25 { max-height:60px !important; right:30px !important;}
+	.more-box { padding:10px 15px; color:#333; display:block; clear:both; overflow:hidden;}
+	.more-box .row-box { max-height:20px !important;}
+	.more { font-size:16px; font-weight:bold; padding:0 15px;}
+	.more:hover { text-decoration:none;}
+	.morecontent span {
+		display: none;
+	}
+	.morelink {
+		display: block; padding:0 15px;
+	}
+	.moreellipses { display:none;}
+	.mrg-btm { margin-bottom:30px;}
+</style>	
+    
+<body>
+
+	<!-- Header Section Start -->
+		
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Urban Yoga</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">					
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="#">Dashboard</a></li>
+						<li><a href="#">Sign In</a></li>
+						<li><a href="#">Classes</a></li>
+						<li><a href="#">Workshops</a></li>
+						<li><a href="#">Appointments</a></li>
+						<li><a href="#">Clint Home</a></li>
+						<li><a href="#">Retail</a></li>	
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+		
+		<nav class="breadcrumb">
+			<div class="container">
+				<a class="breadcrumb-item" href="#">Dashboard</a>
+				<a class="breadcrumb-item" href="#">Business Overview</a>
+				<a class="breadcrumb-item" href="#">Schedul</a>
+				<span class="breadcrumb-item active">Reports</span>
+			</div>
+		</nav>
+		
+		
+	<!-- Header Section End -->
+	
+	<!-- Body Section Start -->
+				
+		<div class="container mrg-btm">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="chart-box">
+						<h4>Yoga Classes <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></h4>
+						<div id="chart"></div>
+						<div class="ttl-sls-bg">
+							<div class="row">
+								<div class="col-xs-12 col-sm-4 col-md-4">
+									<p>Total Monthly Sales</p>
+								</div>
+								<div class="col-xs-12 col-sm-3 col-md-3">
+									<p>Current <b>$23,483</b></p>
+								</div>
+								<div class="col-xs-12 col-sm-5 col-md-5">
+									<p>1-Year</p>
+									<div id="chart4"></div>
+								</div>
+							</div>
+						</div>
+						
+						<a href="#" class="more">						
+						<div class="more-box">
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Price Name</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>Current</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<p>1-Year</p>
+										<!-- <div id="chart4"></div> -->
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart5"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart6"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart7"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart8"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart9"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart10"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="chart-box">
+					<h4>Yoga Privates <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></h4>
+						<div id="chart1"></div>
+						<div class="ttl-sls-bg">
+							<div class="row">
+								<div class="col-xs-12 col-sm-4 col-md-4">
+									<p>Total Monthly Sales</p>
+								</div>
+								<div class="col-xs-12 col-sm-3 col-md-3">
+									<p>Current <b>$23,483</b></p>
+								</div>
+								<div class="col-xs-12 col-sm-5 col-md-5">
+									<p>1-Year</p>
+									<div id="chart11"></div>
+								</div>
+							</div>
+						</div>
+						
+						<a href="#" class="more">More
+						
+						<div class="more-box">
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Price Name</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>Current</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<p>1-Year</p>
+										<!-- <div id="chart4"></div> -->
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart12"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart13"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart14"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart15"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart16"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart17"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="chart-box">
+					<h4>Yoga Duets <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></h4>
+						<div id="chart2"></div>
+						<div class="ttl-sls-bg">
+							<div class="row">
+								<div class="col-xs-12 col-sm-4 col-md-4">
+									<p>Total Monthly Sales</p>
+								</div>
+								<div class="col-xs-12 col-sm-3 col-md-3">
+									<p>Current <b>$23,483</b></p>
+								</div>
+								<div class="col-xs-12 col-sm-5 col-md-5">
+									<p>1-Year</p>
+									<div id="chart18"></div>
+								</div>
+							</div>
+						</div>
+						
+						<a href="#" class="more">More
+						
+						<div class="more-box">
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Price Name</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>Current</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<p>1-Year</p>
+										<!-- <div id="chart4"></div> -->
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart19"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart20"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart21"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart22"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart23"></div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="row-box">
+									<div class="col-xs-12 col-sm-4 col-md-4">
+										<p>Monthly Unlimited</p>
+									</div>
+									<div class="col-xs-12 col-sm-3 col-md-3">
+										<p>$4,260</p>
+									</div>
+									<div class="col-xs-12 col-sm-5 col-md-5">
+										<div id="chart24"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<!-- Body Section End -->
+	
+	<!-- Footer Section Start -->
+	
+	<!-- Footer Section End -->
+
+
+
+
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- <script src="js/npm.js"></script> -->
+
+<script src="js/d3.v3.min.js"></script>
+<script src="js/c3.min.js"></script>
+<script src="js/c3js.js"></script>
+</body>
+
+<script>
+/*var chart = c3.generate({
+    data: {
+         url: 'https://api.myjson.com/bins/5bdb3',
+            mimeType: 'json'
+    }
+});
+
+var sravan = c3.generate({
+    data: {
+         url: 'https://api.myjson.com/bins/5bdb3',
+            mimeType: 'json'
+    }
+});
+
+var ram = c3.generate({
+    data: {
+         url: 'https://api.myjson.com/bins/5bdb3',
+            mimeType: 'json'
+    }
+});
+*/
+
+var chart = c3.generate({
+    data: {
+        x: 'x',
+        columns: [
+			['x', '2013-01-01', '2013-02-02', '2013-03-03', '2013-04-04', '2013-05-05', '2013-06-06', '2013-07-07'],
+            ['data1', 30001,28889,39000,29084,29084,19080,24854],
+            ['data2', 29015,26188,40100,27055,21055,24055,26055]
+        ],
+        type: 'bar'
+    },
+	legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y .tick text")
+			.style("display", "none");
+	},
+	axis: {
+		x: {
+		type: 'timeseries',
+		tick: {
+		format: "%b"
+		},
+		}
+	},
+    bar: {
+        width: {
+            ratio: 0.5 // this makes bar width 50% of length between ticks
+        }
+        // or
+        //width: 100 // this makes bar width 100px
+    }
+});
+
+
+
+	
+var chart1 = c3.generate({
+	bindto: '#chart1',
+    data: {
+		x: 'x',
+        columns: [
+			['x', '2013-01-01', '2013-02-02', '2013-03-03', '2013-04-04', '2013-05-05', '2013-06-06', '2013-07-07'],
+            ['data1', 19080,24854,29445,24453,15834,23898,32010],
+            ['data2', 24055,26055,28455,24000,12005,22511,28515]
+        ],
+        type: 'bar'
+    },
+	legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y .tick text")
+			.style("display", "none");
+	},
+	axis: {
+		x: {
+		type: 'timeseries',
+		tick: {
+		format: "%b"
+		},
+		}
+	},
+    bar: {
+        width: {
+            ratio: 0.5 // this makes bar width 50% of length between ticks
+        }
+        // or
+        //width: 100 // this makes bar width 100px
+    }
+});
+var chart1 = c3.generate({
+	bindto: '#chart2',
+    data: {
+		x:'x',
+        columns: [
+		['x', '2013-01-01', '2013-02-02', '2013-03-03', '2013-04-04', '2013-05-05', '2013-06-06', '2013-07-07'],
+            ['data1', 28889,39000,29445,24453,15834,23898,32010],
+            ['data2', 29015,26188,40100,24000,12005,22511,28515]
+        ],
+        type: 'bar'
+    },
+	legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+	axis: {
+		x: {
+		type: 'timeseries',
+		tick: {
+		format: "%b"
+		},
+		}
+	},
+    bar: {
+        width: {
+            ratio: 0.5 // this makes bar width 50% of length between ticks
+        }
+        // or
+        //width: 100 // this makes bar width 100px
+    }
+});
+
+var chart = c3.generate({
+  bindto: '#chart3',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+
+var chart = c3.generate({
+  bindto: '#chart4',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+
+var chart = c3.generate({
+  bindto: '#chart5',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart6',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+var chart = c3.generate({
+  bindto: '#chart7',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart8',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart9',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart10',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart11',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart12',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart13',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart14',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart15',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart16',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart17',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart18',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart19',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart20',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart21',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart22',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart23',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart24',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+var chart = c3.generate({
+  bindto: '#chart25',
+  data: {
+   
+    columns: [
+      ["cat1", "a", "b", "c", "d"],
+      ["data1", 30, 200, 100, 400]
+    ]
+  },
+  legend: {
+		hide: true,
+	},
+	onrendered: function() {
+		d3.selectAll(".c3-axis.c3-axis-y,.c3-axis.c3-axis-x .tick text")
+			.style("display", "none");
+	},
+  axis: {
+    x: {
+      type: "category"
+    }
+  }
+});
+
+
+
+</script>
+
+
+<!-- More Less Section Start -->
+
+<script>
+
+$(document).ready(function() {
+    // Configure/customize these variables.
+    var showChar = 0;  // How many characters are shown by default
+    var ellipsestext = "...";
+    var moretext = "more";
+    var lesstext = "less";
+    
+
+    $('.more').each(function() {
+        var content = $(this).html();
+ 
+        if(content.length > showChar) {
+ 
+            var c = content.substr(0, showChar);
+            var h = content.substr(showChar, content.length - showChar);
+ 
+            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+ 
+            $(this).html(html);
+        }
+ 
+    });
+ 
+    $(".morelink").click(function(){
+        if($(this).hasClass("less")) {
+            $(this).removeClass("less");
+            $(this).html(moretext);
+        } else {
+            $(this).addClass("less");
+            $(this).html(lesstext);
+        }
+        $(this).parent().prev().toggle();
+        $(this).prev().toggle();
+        return false;
+    });
+});
+
+</script>
+
+<!-- More less Section End -->
+</html>
